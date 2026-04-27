@@ -1,7 +1,11 @@
 ---
 import '../styles/global.css';
+import { Image } from 'astro:assets';
 
 const APP_APK_URL = "https://github.com/DsChauhan08/secret_reputation/releases/download/v1.0.0/secret-reputation-v1.0.0.apk";
+
+const rawImages = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.png', { eager: true });
+const images = Object.values(rawImages).map(mod => mod.default);
 ---
 
 <html lang="en">
@@ -11,10 +15,17 @@ const APP_APK_URL = "https://github.com/DsChauhan08/secret_reputation/releases/d
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Secret Reputation | Anonymous Feedback Game</title>
-        <!-- Import Space Grotesk -->
+        <!-- Optimized Font Loading -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap">
+        </noscript>
+        <!-- Preconnect to GitHub for faster CTA navigation -->
+        <link rel="preconnect" href="https://github.com">
+        <link rel="dns-prefetch" href="https://github.com">
 	</head>
 	<body class="min-h-screen flex flex-col overflow-x-hidden">
         
@@ -76,9 +87,9 @@ const APP_APK_URL = "https://github.com/DsChauhan08/secret_reputation/releases/d
                 <h2 class="text-4xl md:text-5xl font-sans font-bold uppercase text-white mb-12 text-center">See the chaos.</h2>
                 <div class="flex overflow-x-auto gap-8 pb-12 pt-4 px-4 snap-x w-full" style="scrollbar-width: none;">
                     <!-- App Screenshots -->
-                    {Array.from({ length: 7 }).map((_, i) => (
+                    {images.map((img, i) => (
                         <div class="w-[65vw] max-w-[220px] md:max-w-none md:w-[320px] flex-shrink-0 snap-center bg-white brutalist-border p-2" style={`box-shadow: 6px 6px 0px #EAEBE6; transform: rotate(${Math.random() * 4 - 2}deg)`}>
-                            <img src={`/images/${i + 1}.png`} alt={`App Screenshot ${i + 1}`} class="w-full h-auto object-cover brutalist-border" loading="lazy" />
+                            <Image src={img} alt={`App Screenshot ${i + 1}`} class="w-full h-auto object-cover brutalist-border" loading="lazy" decoding="async" fetchpriority="low" />
                         </div>
                     ))}
                 </div>
