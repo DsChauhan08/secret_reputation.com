@@ -52,12 +52,32 @@ const images = Object.values(rawImages).map(mod => mod.default);
                     </p>
 
                     <div class="flex flex-col items-center justify-center">
-                        <a href={APP_APK_URL} class="bg-lawn-dark text-white font-sans font-bold text-3xl md:text-5xl px-12 py-8 brutalist-border brutalist-shadow-hover uppercase inline-block transition-transform shadow-[8px_8px_0px_#3D6B35]">
+                        <a id="download-btn" href={APP_APK_URL} class="bg-lawn-dark text-white font-sans font-bold text-3xl md:text-5xl px-12 py-8 brutalist-border brutalist-shadow-hover uppercase inline-block transition-transform shadow-[8px_8px_0px_#3D6B35]">
                             Download APK
                         </a>
                         <p class="mt-6 text-sm font-bold uppercase text-gray-600">Direct download for Android devices.</p>
                     </div>
                 </section>
+
+                <script>
+                    // Fetch the absolute latest release dynamically on the client
+                    async function fetchLatestRelease() {
+                        try {
+                            const res = await fetch('https://api.github.com/repos/DsChauhan08/secret_reputation/releases/latest');
+                            if (res.ok) {
+                                const data = await res.json();
+                                const apkAsset = data.assets?.find((asset: any) => asset.name.endsWith('.apk'));
+                                if (apkAsset) {
+                                    const btn = document.getElementById('download-btn') as HTMLAnchorElement;
+                                    if (btn) btn.href = apkAsset.browser_download_url;
+                                }
+                            }
+                        } catch (e) {
+                            console.error('Could not fetch latest release:', e);
+                        }
+                    }
+                    fetchLatestRelease();
+                </script>
 
                 <section id="how-it-works" class="w-full max-w-6xl mb-24">
                     <h2 class="text-5xl md:text-6xl font-sans font-bold uppercase text-center mb-16">How it works.</h2>
