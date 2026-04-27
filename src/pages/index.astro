@@ -16,147 +16,81 @@ const APP_APK_URL = "https://github.com/DsChauhan08/secret_reputation/releases/d
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="min-h-screen flex flex-col p-4 md:p-8 overflow-x-hidden">
-        <header class="flex justify-between items-center mb-16 brutalist-border p-4 bg-white brutalist-shadow">
-            <div class="font-sans font-bold text-2xl tracking-tighter uppercase">Secret Reputation</div>
-            <nav class="hidden md:flex gap-6 text-sm uppercase font-bold">
-                <a href="#how-it-works" class="hover:underline underline-offset-4 decoration-2">Features</a>
-                <a href="https://github.com/DsChauhan08/secret_reputation" target="_blank" class="hover:underline underline-offset-4 decoration-2">GitHub</a>
-            </nav>
-        </header>
+	<body class="min-h-screen flex flex-col overflow-x-hidden">
+        
+        <div class="px-4 md:px-8 pt-4 md:pt-8 w-full max-w-[1400px] mx-auto flex flex-col flex-grow">
+            <header class="flex justify-between items-center mb-16 brutalist-border p-4 bg-white brutalist-shadow">
+                <div class="font-sans font-bold text-2xl tracking-tighter uppercase">Secret Reputation</div>
+                <nav class="hidden md:flex gap-6 text-sm uppercase font-bold">
+                    <a href="#how-it-works" class="hover:underline underline-offset-4 decoration-2">Features</a>
+                    <a href="https://github.com/DsChauhan08/secret_reputation" target="_blank" class="hover:underline underline-offset-4 decoration-2">GitHub</a>
+                </nav>
+            </header>
 
-        <main class="flex-grow flex flex-col items-center">
-            <section class="max-w-4xl w-full text-center mb-24 relative mt-10">
-                <div class="absolute -top-10 -left-10 w-32 h-32 bg-lawn-green opacity-20 -z-10 rounded-full blur-3xl"></div>
-                <div class="absolute top-20 -right-10 w-48 h-48 bg-purple-500 opacity-20 -z-10 rounded-full blur-3xl"></div>
-                
-                <h1 class="text-[5rem] md:text-[8rem] lg:text-[10rem] font-sans font-bold tracking-tighter uppercase leading-[0.85] mb-8">
-                    Start <br/> <span class="text-lawn-green">Now.</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-12 uppercase font-bold text-gray-700 bg-lawn-light-green p-4 brutalist-border brutalist-shadow rotate-[-1deg]">
-                    Vote. Roast. Repeat.<br/>Anonymous. Addictive. Absolutely unhinged.
-                </p>
+            <main class="flex-grow flex flex-col items-center w-full">
+                <section class="max-w-4xl w-full text-center mb-24 relative mt-10">
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-lawn-green opacity-20 -z-10 rounded-full blur-3xl"></div>
+                    <div class="absolute top-20 -right-10 w-48 h-48 bg-purple-500 opacity-20 -z-10 rounded-full blur-3xl"></div>
+                    
+                    <h1 class="text-[4rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] font-sans font-bold tracking-tighter uppercase leading-[0.85] mb-8">
+                        Start <br/> <span class="text-lawn-green">Now.</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-16 uppercase font-bold text-gray-700 bg-lawn-light-green p-4 brutalist-border brutalist-shadow rotate-[-1deg]">
+                        Vote. Roast. Repeat.<br/>Anonymous. Addictive. Absolutely unhinged.
+                    </p>
 
-                <div id="download-container" class="flex flex-col items-center justify-center min-h-[160px]">
-                    <!-- This section is dynamically populated by client-side JS based on User Agent -->
-                    <p class="animate-pulse font-bold uppercase text-xl">Determining your device...</p>
+                    <div class="flex flex-col items-center justify-center">
+                        <a href={APP_APK_URL} class="bg-lawn-dark text-white font-sans font-bold text-3xl md:text-5xl px-12 py-8 brutalist-border brutalist-shadow-hover uppercase inline-block transition-transform shadow-[8px_8px_0px_#3D6B35]">
+                            Download APK
+                        </a>
+                        <p class="mt-6 text-sm font-bold uppercase text-gray-600">Direct download for Android devices.</p>
+                    </div>
+                </section>
+
+                <section id="how-it-works" class="w-full max-w-6xl mb-24">
+                    <h2 class="text-5xl md:text-6xl font-sans font-bold uppercase text-center mb-16">How it works.</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 brutalist-border brutalist-shadow relative h-full">
+                            <div class="absolute -top-5 -left-5 bg-lawn-dark text-white font-sans text-2xl font-bold w-12 h-12 flex items-center justify-center brutalist-shadow">1</div>
+                            <h3 class="text-2xl font-sans font-bold text-lawn-green mb-4 uppercase mt-2">Create Room</h3>
+                            <p class="font-medium text-lg">Pick a vibe. Set the tone. From harmless fun to unhinged chaos.</p>
+                        </div>
+                        <div class="bg-white p-6 brutalist-border brutalist-shadow relative h-full">
+                            <div class="absolute -top-5 -left-5 bg-lawn-dark text-white font-sans text-2xl font-bold w-12 h-12 flex items-center justify-center brutalist-shadow">2</div>
+                            <h3 class="text-2xl font-sans font-bold text-lawn-green mb-4 uppercase mt-2">Vote</h3>
+                            <p class="font-medium text-lg">3 rounds. No holds barred. Answer wild questions about your friends anonymously.</p>
+                        </div>
+                        <div class="bg-white p-6 brutalist-border brutalist-shadow relative h-full">
+                            <div class="absolute -top-5 -left-5 bg-lawn-dark text-white font-sans text-2xl font-bold w-12 h-12 flex items-center justify-center brutalist-shadow">3</div>
+                            <h3 class="text-2xl font-sans font-bold text-lawn-green mb-4 uppercase mt-2">Get Called Out</h3>
+                            <p class="font-medium text-lg">Results are in. The roast is real. See who owns each category.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <section class="w-full bg-lawn-dark py-16 mt-8">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-sans font-bold uppercase text-white mb-12 text-center">See the chaos.</h2>
+                <div class="flex overflow-x-auto gap-8 pb-12 pt-4 px-4 snap-x w-full" style="scrollbar-width: none;">
+                    <!-- App Screenshots -->
+                    {Array.from({ length: 7 }).map((_, i) => (
+                        <div class="w-[65vw] max-w-[220px] md:max-w-none md:w-[320px] flex-shrink-0 snap-center bg-white brutalist-border p-2" style={`box-shadow: 6px 6px 0px #EAEBE6; transform: rotate(${Math.random() * 4 - 2}deg)`}>
+                            <img src={`/images/${i + 1}.png`} alt={`App Screenshot ${i + 1}`} class="w-full h-auto object-cover brutalist-border" loading="lazy" />
+                        </div>
+                    ))}
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="how-it-works" class="w-full max-w-6xl mb-24">
-                <h2 class="text-5xl md:text-6xl font-sans font-bold uppercase text-center mb-16">How it works.</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 brutalist-border brutalist-shadow relative h-full">
-                        <div class="absolute -top-5 -left-5 bg-lawn-dark text-white font-sans text-2xl font-bold w-12 h-12 flex items-center justify-center brutalist-shadow">1</div>
-                        <h3 class="text-2xl font-sans font-bold text-lawn-green mb-4 uppercase mt-2">Create Room</h3>
-                        <p class="font-medium text-lg">Pick a vibe. Set the tone. From harmless fun to unhinged chaos.</p>
-                    </div>
-                    <div class="bg-white p-6 brutalist-border brutalist-shadow relative h-full">
-                        <div class="absolute -top-5 -left-5 bg-lawn-dark text-white font-sans text-2xl font-bold w-12 h-12 flex items-center justify-center brutalist-shadow">2</div>
-                        <h3 class="text-2xl font-sans font-bold text-lawn-green mb-4 uppercase mt-2">Vote</h3>
-                        <p class="font-medium text-lg">3 rounds. No holds barred. Answer wild questions about your friends anonymously.</p>
-                    </div>
-                    <div class="bg-white p-6 brutalist-border brutalist-shadow relative h-full">
-                        <div class="absolute -top-5 -left-5 bg-lawn-dark text-white font-sans text-2xl font-bold w-12 h-12 flex items-center justify-center brutalist-shadow">3</div>
-                        <h3 class="text-2xl font-sans font-bold text-lawn-green mb-4 uppercase mt-2">Get Called Out</h3>
-                        <p class="font-medium text-lg">Results are in. The roast is real. See who owns each category.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="w-full max-w-[100vw] mb-12 overflow-hidden py-12 bg-lawn-dark relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-                <div class="max-w-6xl mx-auto px-4">
-                    <h2 class="text-4xl md:text-5xl font-sans font-bold uppercase text-white mb-12">See the chaos.</h2>
-                    <div class="flex overflow-x-auto gap-8 pb-8 snap-x w-full" style="scrollbar-width: none;">
-                        <!-- App Screenshots -->
-                        {Array.from({ length: 7 }).map((_, i) => (
-                            <div class="min-w-[280px] md:min-w-[320px] flex-shrink-0 snap-center bg-white brutalist-border p-2" style={`box-shadow: 8px 8px 0px #EAEBE6; transform: rotate(${Math.random() * 4 - 2}deg)`}>
-                                <img src={`/images/${i + 1}.png`} alt={`App Screenshot ${i + 1}`} class="w-full h-auto object-cover brutalist-border" loading="lazy" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="mt-auto border-t-4 border-lawn-dark pt-8 pb-4 flex flex-col md:flex-row justify-between items-center text-sm uppercase font-bold">
-            <div>&copy; 2026 Secret Reputation</div>
-            <a href="https://github.com/DsChauhan08/secret_reputation" target="_blank" class="mt-4 md:mt-0 hover:underline">Open Source on GitHub</a>
+        <footer class="w-full border-t-4 border-lawn-dark bg-lawn-bg">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-8 pt-8 pb-4 flex flex-col md:flex-row justify-between items-center text-sm uppercase font-bold">
+                <div>&copy; 2026 Secret Reputation</div>
+                <a href="https://github.com/DsChauhan08/secret_reputation" target="_blank" class="mt-4 md:mt-0 hover:underline">Open Source on GitHub</a>
+            </div>
         </footer>
 
-        <script>
-            import QRCode from 'qrcode';
-
-            // Workaround for passing variables to Astro client scripts easily
-            const apkUrl = "https://github.com/DsChauhan08/secret_reputation/releases/download/v1.0.0/secret-reputation-v1.0.0.apk";
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const container = document.getElementById('download-container');
-                if (!container) return;
-
-                const ua = navigator.userAgent || navigator.vendor || window.opera;
-                
-                // Detection logic
-                const isAndroid = /android/i.test(ua);
-                const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-                const isMobile = isAndroid || isIOS || /windows phone/i.test(ua);
-
-                container.innerHTML = ''; // Clear loading
-
-                if (isIOS) {
-                    const btn = document.createElement('button');
-                    btn.className = 'bg-gray-300 text-gray-500 font-sans font-bold text-2xl md:text-4xl px-12 py-6 brutalist-border uppercase cursor-not-allowed';
-                    btn.textContent = 'Not Available on iOS';
-                    btn.disabled = true;
-                    container.appendChild(btn);
-                    
-                    const msg = document.createElement('p');
-                    msg.className = 'mt-4 font-bold max-w-sm text-center uppercase';
-                    msg.textContent = 'We are currently Android-only. Check back later!';
-                    container.appendChild(msg);
-                } else if (isAndroid || isMobile) {
-                    const link = document.createElement('a');
-                    link.href = apkUrl;
-                    link.className = 'bg-lawn-dark text-white font-sans font-bold text-3xl md:text-5xl px-12 py-8 brutalist-border brutalist-shadow-hover uppercase inline-block transition-transform';
-                    link.textContent = 'Download APK';
-                    link.style.boxShadow = "8px 8px 0px #3D6B35"; // Custom shadow color for main CTA
-                    container.appendChild(link);
-                } else {
-                    // Desktop
-                    const desktopDiv = document.createElement('div');
-                    desktopDiv.className = 'flex flex-col items-center p-8 bg-white brutalist-border';
-                    desktopDiv.style.boxShadow = "10px 10px 0px #1A1A1A";
-                    
-                    const title = document.createElement('h4');
-                    title.className = 'font-sans font-bold text-2xl uppercase mb-6 text-center';
-                    title.textContent = 'Scan to Download (Android)';
-                    desktopDiv.appendChild(title);
-
-                    const canvas = document.createElement('canvas');
-                    QRCode.toCanvas(canvas, apkUrl, {
-                        width: 250,
-                        margin: 2,
-                        color: {
-                            dark: '#1A1A1A',
-                            light: '#ffffff'
-                        }
-                    }, function (error) {
-                        if (error) console.error(error);
-                    });
-                    
-                    canvas.className = 'brutalist-border mx-auto mb-6';
-                    desktopDiv.appendChild(canvas);
-
-                    const fallbackLink = document.createElement('a');
-                    fallbackLink.href = apkUrl;
-                    fallbackLink.className = 'text-lg underline font-bold uppercase hover:text-lawn-green';
-                    fallbackLink.textContent = 'Or download APK directly';
-                    desktopDiv.appendChild(fallbackLink);
-
-                    container.appendChild(desktopDiv);
-                }
-            });
-        </script>
 	</body>
 </html>
