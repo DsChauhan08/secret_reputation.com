@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@theme {
+  --color-lawn-bg: #EAEBE6;
+  --color-lawn-dark: #1A1A1A;
+  --color-lawn-green: #2B4C25;
+  --color-lawn-light-green: #E6F0E4;
+  --font-sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-lawn-bg);
+    color: var(--color-lawn-dark);
+    font-family: var(--font-mono); /* Using mono for the brutalist lawn feel */
+  }
+
+  /* Utility for brutalist shadows */
+  .brutalist-shadow {
+    box-shadow: 6px 6px 0px var(--color-lawn-dark);
+  }
+  .brutalist-shadow-hover:hover {
+    box-shadow: 2px 2px 0px var(--color-lawn-dark);
+    transform: translate(4px, 4px);
+  }
+  
+  .brutalist-border {
+    border: 3px solid var(--color-lawn-dark);
+  }
+}
