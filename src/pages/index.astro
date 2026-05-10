@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 const APP_APK_URL = "https://github.com/DsChauhan08/secret_reputation/releases/download/v1.0.0/secret-reputation-v1.0.0.apk";
 
@@ -123,5 +124,6 @@ const images = Object.values(rawImages).map(mod => mod.default);
             </div>
         </footer>
 
+        <SpeedInsights />
 	</body>
 </html>
